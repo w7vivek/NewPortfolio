@@ -1,0 +1,39 @@
+.replay-btn {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  border: 2px solid rgba(255,255,255,0.4);
+  background: transparent;
+  color: #ccc;
+  cursor: pointer;
+  overflow: hidden;
+  display: none;
+}
+
+.replay-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #E50914;
+  transition: 0.4s;
+  z-index: 0;
+}
+
+.replay-btn:hover::before {
+  left: 0;  /* 🔥 fills from left */
+}
+
+.replay-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.replay-btn:hover {
+  color: white;
+  border-color: #E50914;
+}

@@ -1,0 +1,129 @@
+/* SECTION */
+
+/* GLOBAL */
+body {
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+/* NAME / HERO TITLE */
+.hero-left h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 70px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* ROLE TEXT */
+.role {
+  font-family: 'Poppins', sans-serif;
+  font-size: 42px;
+  font-weight: 600;
+  color: #E50914;
+}
+
+.about {
+  min-height: 100vh;
+  background: #000;
+  color: white;
+  padding: 100px 80px;
+
+  opacity: 0;
+  transform: translateY(80px);
+  transition: 1s ease;
+}
+
+
+/* SHOW ON SCROLL */
+.about.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* TITLE */
+.about-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 64px;
+  font-weight: 800;
+  color: #E50914;
+  letter-spacing: 2px;
+}
+
+/* LAYOUT */
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* TEXT */
+.about-text {
+  flex: 1;
+  color: #ccc;
+
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: 0.8s ease;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  color: #ccc;
+  line-height: 1.8;
+}
+
+/* RIGHT TEXT ANIMATION */
+.about-text.right {
+  transform: translateX(50px);
+}
+
+/* IMAGE */
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+
+  opacity: 0;
+  transform: scale(0.8);
+  transition: 0.8s ease;
+}
+
+.about-image img {
+  width: 80%;
+  border-radius: 10px;
+}
+
+/* BUTTON */
+.contact-btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #E50914;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background: #b20710;
+}
+
+/* 🔥 TRIGGER ANIMATION */
+.about.show .left {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.2s;
+}
+
+.about.show .about-image {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 0.4s;
+}
+
+.about.show .right {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.6s;
+}

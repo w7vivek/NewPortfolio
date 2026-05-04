@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;600&display=swap');
+
+/* ─────────────────────────────────────────
+   ROOT VARIABLES
+───────────────────────────────────────── */
+:root {
+  --red:        #E50914;
+  --red-dim:    rgba(229, 9, 20, 0.12);
+  --red-glow:   rgba(229, 9, 20, 0.25);
+  --red-line:   rgba(229, 9, 20, 0.4);
+  --bg:         #0a0a0a;
+  --surface:    rgba(255, 255, 255, 0.03);
+  --border:     rgba(255, 255, 255, 0.08);
+  --text:       #ffffff;
+  --muted:      #888888;
+  --subtle:     #cccccc;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+}
+
+/* ─────────────────────────────────────────
+   PAGE WRAPPER
+───────────────────────────────────────── */
+.skills-page {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  padding: 0 6vw 100px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ─────────────────────────────────────────
+   BACKGROUND EFFECTS
+───────────────────────────────────────── */
+.skills-grid-bg {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(229, 9, 20, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(229, 9, 20, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.skills-red-blob {
+  position: fixed;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--red-dim) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─────────────────────────────────────────
+   BACK BUTTON
+───────────────────────────────────────── */
+.skills-back-btn {
+  position: fixed;
+  top: 32px;
+  left: 40px;
+  background: transparent;
+  border: 1px solid var(--red-line);
+  color: var(--red);
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 100;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.skills-back-btn:hover {
+  background: var(--red);
+  color: #fff;
+}
+
+/* ─────────────────────────────────────────
+   FADE UP ANIMATION
+───────────────────────────────────────── */
+.skills-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.skills-fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─────────────────────────────────────────
+   HERO
+───────────────────────────────────────── */
+.skills-hero {
+  padding-top: 140px;
+  padding-bottom: 60px;
+}
+
+.skills-eyebrow {
+  color: var(--red);
+  font-size: 12px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+}
+
+.skills-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(60px, 10vw, 130px);
+  line-height: 0.95;
+  margin: 0 0 32px;
+  color: var(--text);
+  letter-spacing: 2px;
+}
+
+.skills-red {
+  color: var(--red);
+}
+
+.skills-hero-divider {
+  width: 80px;
+  height: 3px;
+  background: var(--red);
+}
+
+/* ─────────────────────────────────────────
+   SECTIONS
+───────────────────────────────────────── */
+.skills-section {
+  padding-top: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.skills-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 48px);
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+  color: var(--text);
+}
+
+/* ─────────────────────────────────────────
+   SERVICE CARDS GRID
+───────────────────────────────────────── */
+.skills-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+/* ─────────────────────────────────────────
+   CARD
+───────────────────────────────────────── */
+.skills-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 36px 28px;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.skills-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 40px var(--red-glow);
+  border-color: var(--red);
+}
+
+.skills-card:hover .skills-card-line {
+  width: 100%;
+}
+
+.skills-card-icon {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.skills-card-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+
+.skills-card-desc {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0 0 20px;
+}
+
+.skills-card-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: var(--red);
+  transition: width 0.4s ease;
+}
+
+/* ─────────────────────────────────────────
+   SKILL BARS GRID
+───────────────────────────────────────── */
+.skills-bars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px 48px;
+}
+
+/* ─────────────────────────────────────────
+   SKILL BAR
+───────────────────────────────────────── */
+.skill-bar-row {
+  margin-bottom: 4px;
+}
+
+.skill-bar-label-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.skill-bar-name {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--subtle);
+}
+
+.skill-bar-level {
+  font-size: 12px;
+  color: var(--red);
+  font-weight: 600;
+}
+
+.skill-bar-track {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.07);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: var(--red);
+  transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.skill-bar-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: rgba(229, 9, 20, 0.3);
+  filter: blur(6px);
+  transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .skills-page {
+    padding: 0 5vw 80px;
+  }
+
+  .skills-back-btn {
+    top: 16px;
+    left: 16px;
+    font-size: 11px;
+    padding: 8px 14px;
+  }
+
+  .skills-hero {
+    padding-top: 100px;
+  }
+
+  .skills-bars-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .skills-services-grid {
+    grid-template-columns: 1fr;
+  }
+}
