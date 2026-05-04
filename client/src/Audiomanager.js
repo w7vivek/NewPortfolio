@@ -6,9 +6,9 @@ const introAudio = new Audio("/intro.mp3");
 introAudio.volume = 1;
 introAudio.preload = "auto";
 
-const bgAudio = new Audio("/bg.mp3"); // ← your background song file in /public
-bgAudio.volume = 0.5;                 // comfortable background volume
-bgAudio.loop = true;                  // ✅ loops forever across all pages
+const bgAudio = new Audio("/bg.mp3");
+bgAudio.volume = 0.5;
+bgAudio.loop = true;
 bgAudio.preload = "auto";
 
 export const playIntro = () => {
