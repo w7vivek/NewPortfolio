@@ -1,8 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./Project_tarin_certi.css";
 import { useNavigate } from "react-router-dom";
-
-/* 🔥 add your images */
 import elevanceImg from "../../assets/elevance.png";
 import mspImg from "../../assets/msp.png";
 
@@ -19,7 +17,6 @@ const Training = () => {
       },
       { threshold: 0.2 }
     );
-
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
@@ -27,16 +24,17 @@ const Training = () => {
   return (
     <section ref={ref} className="section">
 
-      <h2>Training</h2>
+      <div className="section-title-wrap">
+        <h2>Training</h2>
+      </div>
 
       <div className="content">
 
-        {/* TRAINING 1 */}
         <div className="item">
           <div className="item-content">
             <div className="text">
-              <h3>Full Stack Web Development</h3>
               <span className="tech">Elevance Skills</span>
+              <h3>Full Stack Web Development</h3>
               <p>
                 Hands-on training with real-world projects including
                 production-level applications and modern web technologies.
@@ -46,12 +44,11 @@ const Training = () => {
           </div>
         </div>
 
-        {/* TRAINING 2 */}
         <div className="item">
           <div className="item-content">
             <div className="text">
-              <h3>Final Year Project – WorkforceHub</h3>
               <span className="tech">MSP Concepts</span>
+              <h3>Final Year Project – WorkforceHub</h3>
               <p>
                 Developed a workforce management system focusing on employee
                 tracking, attendance, and scheduling using full-stack technologies.
